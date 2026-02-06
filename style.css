@@ -1,19 +1,22 @@
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
     background-color: rgba(134, 59, 5, 0.859);
 }
+
 .container {
     width: 100%;
     min-height: 100px;
     padding: 10px;
 }
+
 .todo-app {
     width: 100%;
     max-width: 540px;
@@ -22,12 +25,14 @@ body {
     padding: 40px 30px 70px;
     border-radius: 10px;
 }
+
 .todo-app h2 {
     text-align: center;
     color: #010409;
     margin-bottom: 35px;
     font-size: 35px;
 }
+
 .row {
     display: flex;
     align-items: center;
@@ -37,17 +42,20 @@ body {
     padding-left: 20px;
     margin-bottom: 25px;
 }
+
 input {
     flex: 1;
     border: none;
     outline: none;
     background: transparent;
     padding: 10px;
-    font-weight: 14px;
+    font-size: 16px;
 }
+
 input::placeholder {
     font-size: 18px;
 }
+
 button {
     border: none;
     outline: none;
@@ -58,45 +66,72 @@ button {
     cursor: pointer;
     border-radius: 40px;
 }
+
 ul li {
     background-color: #fff;
     font-size: 17px;
-    padding: 12px 8px 12px 50px;
+    padding: 12px;
+    margin-bottom: 10px;
     user-select: none;
-    cursor: pointer;
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2px;
 }
-ul li::before {
-    content: '';
-    position: absolute;
-    height: 28px;
+
+.checkbox {
     width: 28px;
+    height: 28px;
     border-radius: 50%;
     background-image: url(unchecked.png);
     background-size: cover;
     background-position: center;
-    top: 12px;
-    left: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+    flex-shrink: 0;
 }
-ul li.checked {
-    color: #555555;
-    text-decoration: line-through;
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 2px;
 }
-ul li.checked::before {
+
+li.checked .checkbox {
     background-image: url(checked.png);
 }
-ul li span {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
+
+li.checked .task-text {
     color: #555;
-    line-height: 40px;
+    text-decoration: line-through;
+}
+
+.edit-btn {
+    padding: 10px 25px;
+    font-size: 13px;
+    background: #ff5945;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background: #ea54049a;
+}
+
+.delete-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    color: red;
+    line-height: 32px;
     text-align: center;
     border-radius: 50%;
+    cursor: pointer;
 }
-ul li span:hover {
+
+.delete-btn:hover {
     background: #edeef0;
+    color: black;
 }

@@ -4,39 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cotainer">
-        <div class="todo-app">
-            <h2>To-Do List</h2>
-            <div class="row">
-                <input type="text" id="text" placeholder="Add your text">
-                <button onclick="addTask()">ADD</button>
-            </div>
-            <ul id="list-container">
-                <!-- <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li> -->
-            </ul>
+
+<div class="container">
+    <div class="todo-app">
+        <h2>To-Do List</h2>
+
+        <div class="row">
+            <input type="text" id="text" placeholder="Add your text">
+            <button onclick="addTask()">ADD</button>
         </div>
+
+        <ul id="list-container">
+            <!-- tasks will be added here -->
+        </ul>
     </div>
+</div>
 
-    
-
-    <script src="todolist.js">
-
-const obj = 
-{
-    name: "John", 
-    age: 30, 
-    city: "New York"
-};
-
-
-console.log(obj)
-
-
-    </script>
+<script src="todolist.js"></script>
 </body>
 </html>
