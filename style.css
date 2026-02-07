@@ -8,7 +8,13 @@
 }
 
 body {
-    background-color: rgba(134, 59, 5, 0.859);
+    background: linear-gradient(
+        130deg,
+        #10a5e5, 
+        #491e1e6c,  
+        #4c0082f5   
+    );
+    background-attachment: fixed;
 }
 
 .container {
