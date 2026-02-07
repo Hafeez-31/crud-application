@@ -1,7 +1,7 @@
 const text = document.getElementById("text");
 const listcontainer = document.getElementById("list-container");
 
-let editLi = null; 
+let editLi = null;
 
 function addTask() {
     if (text.value.trim() === "") {
@@ -34,12 +34,28 @@ function addTask() {
 listcontainer.addEventListener("click", function (e) {
 
     if (e.target.classList.contains("checkbox")) {
-        e.target.parentElement.classList.toggle("checked");
+        const li = e.target.parentElement;
+        const editBtn = li.querySelector(".edit-btn");
+
+        li.classList.toggle("checked");
+
+        if (li.classList.contains("checked")) {
+            editBtn.disabled = true;
+            editBtn.style.opacity = "0.5";
+            editBtn.style.cursor = "not-allowed";
+        } else {
+            editBtn.disabled = false;
+            editBtn.style.opacity = "1";
+            editBtn.style.cursor = "pointer";
+        }
+
         saveData();
         return;
     }
 
     if (e.target.classList.contains("edit-btn")) {
+        if (e.target.disabled) return; 
+
         editLi = e.target.parentElement;
         text.value = editLi.querySelector(".task-text").innerText;
         text.focus();
@@ -65,6 +81,15 @@ function saveData() {
 
 function showTask() {
     listcontainer.innerHTML = localStorage.getItem("data") || "";
+
+    document.querySelectorAll("#list-container li").forEach(li => {
+        const editBtn = li.querySelector(".edit-btn");
+        if (li.classList.contains("checked")) {
+            editBtn.disabled = true;
+            editBtn.style.opacity = "0.5";
+            editBtn.style.cursor = "not-allowed";
+        }
+    });
 }
 
 showTask();
